@@ -1,0 +1,170 @@
+{
+  "version": 1,
+  "jobs": [
+    {
+      "id": "e1ff4758-b7ae-49f6-a0bd-d276e66603db",
+      "agentId": "main",
+      "sessionKey": "agent:main:main",
+      "name": "每日记忆沉淀",
+      "enabled": true,
+      "createdAtMs": 1777215545908,
+      "schedule": {
+        "kind": "cron",
+        "expr": "30 23 * * *",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "请将今天的会话摘要写入 memory/YYYY-MM-DD.md（路径示例：memory/2026-04-26.md）。内容包括：1) 今天主要聊了什么 2) 做了哪些操作/配置变更 3) 有没有重要决策或待办事项。用中文写，简明扼要。注意：1) 写入 memory/ 目录确保成功，失败请重试。2) 执行完成后回复",
+        "timeoutSeconds": 300
+      },
+      "delivery": {
+        "mode": "none"
+      },
+      "failureAlert": {
+        "after": 1,
+        "cooldownMs": 86400000,
+        "mode": "announce"
+      },
+      "state": {}
+    },
+    {
+      "id": "2925b002-0cba-4a6b-991a-085abd52247a",
+      "agentId": "main",
+      "sessionKey": "agent:main:main",
+      "name": "XAUUSD EW Morning",
+      "enabled": true,
+      "createdAtMs": 1777471672865,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 8 * * 1-5",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "main",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "systemEvent",
+        "text": "⏰ 早上8点 XAUUSD波浪分析时间到。请立刻执行：python3 C:\\Users\\Administrator\\.openclaw\\workspace\\ew_analysis.py 然后把分析结果完整推送给我。"
+      },
+      "failureAlert": {
+        "after": 3,
+        "cooldownMs": 86400000
+      },
+      "state": {}
+    },
+    {
+      "id": "686fa22e-f41d-4188-9ceb-13bbdf4eb2d2",
+      "name": "XAUUSD EW Evening",
+      "enabled": true,
+      "createdAtMs": 1777472329697,
+      "schedule": {
+        "kind": "cron",
+        "expr": "30 20 * * 1-5",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "main",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "systemEvent",
+        "text": "H4波浪分析(42天)时间到,请执行: python3 C:\\Users\\Administrator\\.openclaw\\workspace\\ew_analysis.py --tf H4 --days 42 然后推送结果给我。"
+      },
+      "failureAlert": {
+        "after": 3,
+        "cooldownMs": 86400000
+      },
+      "state": {}
+    },
+    {
+      "id": "24b1d9f3-ac1c-42aa-a732-693d7084dae5",
+      "agentId": "main",
+      "sessionKey": "agent:main:feishu:default:direct:ou_fee683399a415f004803be7231237569",
+      "name": "黄金下周验证复盘(三周期)",
+      "enabled": true,
+      "deleteAfterRun": true,
+      "createdAtMs": 1777781439969,
+      "schedule": {
+        "kind": "at",
+        "at": "2026-05-09T12:00:00.000Z"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "现在复盘的时机到了。请执行以下任务：\n\n1. 运行 python3 C:\\Users\\Administrator\\.openclaw\\workspace\\ew_analysis.py --sym XAUUSDm --tf D1 --days 30 获取D1最新数据\n2. 再跑 H4: python3 C:\\Users\\Administrator\\.openclaw\\workspace\\ew_analysis.py --sym XAUUSDm --tf H4 --days 60\n3. 再跑 M5: python3 C:\\Users\\Administrator\\.openclaw\\workspace\\ew_analysis.py --sym XAUUSDm --tf M5 --days 7\n4. 根据三周期数据回答以下问题：\n   - 上周实际高低点是多少？（逐日列出）\n   - 5/4做出的预测（高点$4680-4720, 低点$4510-4545, 路径A/B/C）是否正确？\n   - 关键位置$4560/$4510/$4769是否被触及？\n   - C浪是否延续还是波浪计数需要修正？\n   - D1/H4/M5三周期是否共振？矛盾之处在哪？\n   - 从这次复盘中学到了什么可以改进下一次预测？\n\n把复盘结果完整发给白昱（数据说话，不要只给结论）。",
+        "model": "deepseek/deepseek-v4-flash"
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "feishu",
+        "to": "user:ou_fee683399a415f004803be7231237569"
+      },
+      "state": {}
+    },
+    {
+      "id": "0137affe-2184-4652-a1c8-ce206553e568",
+      "name": "gold_analysis_daily",
+      "enabled": true,
+      "createdAtMs": 1778046521305,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 7 * * 1-5",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "python -X utf8 C:\\Users\\Administrator\\.openclaw\\workspace\\scripts\\run_daily_analysis.py",
+        "timeoutSeconds": 180,
+        "toolsAllow": [
+          "exec",
+          "read",
+          "write"
+        ]
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "last"
+      },
+      "state": {}
+    },
+    {
+      "id": "9e4f7d62-524d-485a-b492-7ff34eef6401",
+      "name": "btc-hourly",
+      "enabled": true,
+      "createdAtMs": 1778306326098,
+      "schedule": {
+        "kind": "every",
+        "everyMs": 3600000,
+        "anchorMs": 1778306326098
+      },
+      "sessionTarget": "main",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "systemEvent",
+        "text": "Run: python3 -X utf8 scripts/update_btc_data.py"
+      },
+      "state": {}
+    },
+    {
+      "id": "7c419aca-29ee-4d94-a64e-42ea80a4fded",
+      "name": "gold-hourly",
+      "enabled": true,
+      "createdAtMs": 1778310844449,
+      "schedule": {
+        "kind": "every",
+        "everyMs": 3600000,
+        "anchorMs": 1778310844449
+      },
+      "sessionTarget": "main",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "systemEvent",
+        "text": "Run: python3 -X utf8 scripts/update_mt5_data.py"
+      },
+      "state": {}
+    }
+  ]
+}

@@ -1,0 +1,81 @@
+# MT5项目专用.gitignore
+
+# 日志文件
+*.log
+*.txt
+*.csv
+
+# 临时文件
+*.tmp
+*.temp
+*~
+*.swp
+*.swo
+
+# 编译输出
+*.ex5
+*.ex4
+
+# 数据文件
+*.dat
+*.hst
+*.fxt
+
+# 原始K线数据（大文件，由LFS管理）
+data/taskflow.db
+data/mt5_update.log
+data/btc_update.log
+
+# 配置文件（包含敏感信息）
+*.ini
+config.json
+.env
+secrets.*
+
+# Python虚拟环境
+venv/
+env/
+.venv/
+
+# IDE文件
+.vscode/
+.idea/
+*.code-workspace
+
+# 系统文件
+.DS_Store
+Thumbs.db
+
+# 测试输出
+test_results/
+backtest/
+
+# 压缩文件
+*.zip
+*.tar
+*.gz
+
+# 项目特定忽略
+python_signals.json
+python_signal_status.json
+system_status.json
+
+# 检查点文件
+checkpoint_*.txt
+
+# 学习记录
+.learnings/
+
+# 技能目录
+skills/
+
+# 临时分析脚本
+_check_*.py
+_temp_*.py
+_migrate_*.py
+
+# openclaw配置备份
+C:\Users\Administrator\.openclaw\openclaw.json.backup-*
+C:\Users\Administrator\.openclaw\openclaw.json.bak*
+C:\Users\Administrator\.openclaw\openclaw.json.clobbered*
+C:\Users\Administrator\.openclaw\openclaw.json.last-good

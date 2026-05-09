@@ -1,0 +1,90 @@
+{
+  "version": 1,
+  "jobs": {
+    "e1ff4758-b7ae-49f6-a0bd-d276e66603db": {
+      "updatedAtMs": 1778254276955,
+      "scheduleIdentity": "{\"version\":1,\"enabled\":true,\"schedule\":{\"kind\":\"cron\",\"expr\":\"30 23 * * *\",\"tz\":\"Asia/Shanghai\"}}",
+      "state": {
+        "nextRunAtMs": 1778340600000,
+        "lastRunAtMs": 1778254200019,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 76936,
+        "lastDeliveryStatus": "not-requested",
+        "consecutiveErrors": 0,
+        "consecutiveSkipped": 0
+      }
+    },
+    "2925b002-0cba-4a6b-991a-085abd52247a": {
+      "updatedAtMs": 1778198400028,
+      "scheduleIdentity": "{\"version\":1,\"enabled\":true,\"schedule\":{\"kind\":\"cron\",\"expr\":\"0 8 * * 1-5\",\"tz\":\"Asia/Shanghai\"}}",
+      "state": {
+        "nextRunAtMs": 1778457600000,
+        "lastRunAtMs": 1778198400020,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 8,
+        "lastDeliveryStatus": "not-requested",
+        "consecutiveErrors": 0,
+        "consecutiveSkipped": 0
+      }
+    },
+    "686fa22e-f41d-4188-9ceb-13bbdf4eb2d2": {
+      "updatedAtMs": 1778243400023,
+      "scheduleIdentity": "{\"version\":1,\"enabled\":true,\"schedule\":{\"kind\":\"cron\",\"expr\":\"30 20 * * 1-5\",\"tz\":\"Asia/Shanghai\"}}",
+      "state": {
+        "nextRunAtMs": 1778502600000,
+        "lastRunAtMs": 1778243400015,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 8,
+        "lastDeliveryStatus": "not-requested",
+        "consecutiveErrors": 0,
+        "consecutiveSkipped": 0
+      }
+    },
+    "24b1d9f3-ac1c-42aa-a732-693d7084dae5": {
+      "updatedAtMs": 1777813685563,
+      "scheduleIdentity": "{\"version\":1,\"enabled\":true,\"schedule\":{\"kind\":\"at\",\"at\":\"2026-05-09T12:00:00.000Z\"}}",
+      "state": {
+        "nextRunAtMs": 1778328000000
+      }
+    },
+    "0137affe-2184-4652-a1c8-ce206553e568": {
+      "updatedAtMs": 1778194821063,
+      "scheduleIdentity": "{\"version\":1,\"enabled\":true,\"schedule\":{\"kind\":\"cron\",\"expr\":\"0 7 * * 1-5\",\"tz\":\"Asia/Shanghai\"}}",
+      "state": {
+        "nextRunAtMs": 1778454000000,
+        "lastRunAtMs": 1778194800020,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 21043,
+        "lastDelivered": true,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 0,
+        "consecutiveSkipped": 0
+      }
+    },
+    "9e4f7d62-524d-485a-b492-7ff34eef6401": {
+      "updatedAtMs": 1778313526140,
+      "scheduleIdentity": "{\"version\":1,\"enabled\":true,\"schedule\":{\"kind\":\"every\",\"everyMs\":3600000,\"anchorMs\":1778306326098}}",
+      "state": {
+        "nextRunAtMs": 1778317126131,
+        "lastRunAtMs": 1778313526131,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 9,
+        "lastDeliveryStatus": "not-requested",
+        "consecutiveErrors": 0,
+        "consecutiveSkipped": 0
+      }
+    },
+    "7c419aca-29ee-4d94-a64e-42ea80a4fded": {
+      "updatedAtMs": 1778310844449,
+      "scheduleIdentity": "{\"version\":1,\"enabled\":true,\"schedule\":{\"kind\":\"every\",\"everyMs\":3600000,\"anchorMs\":1778310844449}}",
+      "state": {
+        "nextRunAtMs": 1778314444449
+      }
+    }
+  }
+}

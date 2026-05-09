@@ -1,0 +1,79 @@
+# OpenClaw主目录.gitignore
+
+# 会话记录（不需要备份）
+agents/
+
+# 运行时临时目录
+.openclaw-tmp/
+
+# 大文件（由LFS管理）
+memory/main.sqlite
+workspace/data/taskflow.db
+
+# 日志
+workspace/data/*.log
+*.log
+heartbeat.log
+
+# 配置文件备份
+*.bak
+*.bak.*
+*.clobbered.*
+*.last-good
+openclaw.json.backup-*
+openclaw.json.bak*
+openclaw.json.clobbered*
+
+# 临时文件
+*.tmp
+*.swp
+*.swo
+*~
+
+# Python缓存
+__pycache__/
+*.pyc
+*.pyo
+
+# 系统文件
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# 配置备份目录
+config-backups/
+
+# node_modules
+node_modules/
+
+# 检查点文件 / 临时文本
+workspace/doc_id.txt
+workspace/*.txt
+workspace/*.csv
+workspace/checkpoint_*.txt
+
+# 临时分析脚本
+workspace/_check_*.py
+workspace/_temp_*.py
+workspace/_migrate_*.py
+workspace/_verify*.py
+workspace/_clean*.py
+workspace/_w1*.py
+workspace/_check_*.html
+
+# 认证/敏感
+exec-approvals.json
+update-check.json
+gateway-restart-intent.json
+test_telegram_access.py
+check_telegram_logs.ps1
+monitor_pairing.ps1
+add_telegram_user*.py
+check_telegram_pairing.py
+telegram_pairing_guide.md
+
+# 技能目录
+skills/
+
+# 旧memoria残留
+memory/memoria/
