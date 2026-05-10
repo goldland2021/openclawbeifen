@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>BTCUSD 分析报告 | 2026-05-10</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:-apple-system,'Segoe UI',Roboto,sans-serif;background:#0d1117;color:#c9d1d9;padding:20px;}
+.container{max-width:1200px;margin:0 auto;}
+h1{font-size:28px;margin-bottom:5px;color:#58a6ff;}
+h2{font-size:20px;margin:25px 0 15px;color:#f0883e;border-bottom:1px solid #30363d;padding-bottom:8px;}
+h3{font-size:16px;margin:15px 0 10px;color:#8b949e;}
+.subtitle{color:#8b949e;font-size:14px;margin-bottom:20px;}
+.price-big{font-size:42px;font-weight:700;color:#58a6ff;}
+.price-change{font-size:16px;margin-left:10px;}
+.up{color:#3fb950;}
+.down{color:#f85149;}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin:15px 0;}
+.card{background:#161b22;border:1px solid #30363d;border-radius:8px;padding:15px;}
+.card .label{color:#8b949e;font-size:12px;text-transform:uppercase;}
+.card .value{font-size:22px;font-weight:600;margin-top:4px;}
+.signal{display:inline-block;padding:2px 10px;border-radius:12px;font-size:13px;font-weight:600;}
+.signal-bull{background:#0f2d1a;color:#3fb950;border:1px solid #3fb950;}
+.signal-bear{background:#2d0f0f;color:#f85149;border:1px solid #f85149;}
+.signal-neutral{background:#1c1c1c;color:#d29922;border:1px solid #d29922;}
+.chart-box{background:#161b22;border:1px solid #30363d;border-radius:8px;padding:20px;margin:15px 0;}
+table{width:100%;border-collapse:collapse;margin:10px 0;}
+th,td{padding:8px 12px;text-align:left;border-bottom:1px solid #21262d;font-size:14px;}
+th{color:#8b949e;font-weight:600;background:#161b22;}
+tr:hover{background:#1c2128;}
+.wave-section{background:#161b22;border:1px solid #30363d;border-radius:8px;padding:20px;margin:15px 0;}
+.footer{text-align:center;color:#484f58;font-size:12px;margin-top:40px;padding:20px 0;border-top:1px solid #21262d;}
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>🪙 BTCUSD 综合分析报告</h1>
+<div class="subtitle">2026-05-10 18:56 UTC+8 · 比尔威廉姆混沌理论 + 艾略特波浪 + 传统技术分析</div>
+
+<div class="card" style="margin-bottom:15px;">
+  <div class="label">BTCUSD 最新收盘</div>
+  <div><span class="price-big">$80,787.37</span><span style="color:#8b949e;font-size:14px;margin-left:8px;">（2026-05-10 D1）</span></div>
+  <div style="margin-top:8px;">
+    <span>日高 $80,904.49</span><span style="margin:0 10px;color:#30363d;">|</span>
+    <span>日低 $80,543.30</span><span style="margin:0 10px;color:#30363d;">|</span>
+    <span>成交量 14,121</span>
+  </div>
+</div>
+
+<div class="grid">
+  <div class="card">
+    <div class="label">趋势评级</div>
+    <div class="value" style="font-size:20px;">强势多头 📈</div>
+    <div style="margin-top:5px;"><span class="value" style="font-size:18px;">4/7</span></div>
+  </div>
+  <div class="card">
+    <div class="label">波浪阶段</div>
+    <div class="value" style="color:#f0883e;font-size:20px;">浪⑤-③</div>
+    <div style="margin-top:5px;color:#8b949e;font-size:13px;">第五浪推动中 · +22.7%</div>
+  </div>
+  <div class="card">
+    <div class="label">RSI(14)</div>
+    <div class="value" style="color:#f85149;">70.8</div>
+    <div style="margin-top:5px;color:#8b949e;font-size:13px;">⚠️ 超买区，回调风险</div>
+  </div>
+  <div class="card">
+    <div class="label">鳄鱼线</div>
+    <div class="value" style="font-size:18px;">🐊 多头张嘴向上 — 趋势强烈</div>
+  </div>
+</div>
+
+<div class="chart-box">
+  <h3>D1 K线 (近60天) + MA5 / MA20</h3>
+  <canvas id="priceChart" height="280"></canvas>
+  <canvas id="rsiChart" height="100" style="margin-top:8px;"></canvas>
+</div>
+
+<h2>📊 关键技术指标</h2>
+<div class="grid">
+  <div class="card"><div class="label">MA5</div><div class="value">$78,636.99</div></div>
+  <div class="card"><div class="label">MA20（趋势线）</div><div class="value" style="color:#3fb950;">$71,506.41</div></div>
+  <div class="card"><div class="label">MA60</div><div class="value">$83,388.54</div></div>
+  <div class="card"><div class="label">MA200</div><div class="value">$99,203.64</div></div>
+</div>
+
+<div class="card" style="margin:15px 0;">
+  <div class="label">均线排列</div>
+  <div style="display:flex;gap:12px;margin-top:8px;flex-wrap:wrap;">
+    <div style="background:#1c2128;padding:5px 12px;border-radius:6px;border:1px solid #30363d;"><span style="color:#8b949e;">MA5</span><span style="color:#fff;margin-left:6px;">$78,637</span></div>
+    <div style="background:#1c2128;padding:5px 12px;border-radius:6px;border:1px solid #30363d;"><span style="color:#8b949e;">MA20</span><span style="color:#fff;margin-left:6px;">$71,506</span></div>
+    <div style="background:#1c2128;padding:5px 12px;border-radius:6px;border:1px solid #30363d;"><span style="color:#8b949e;">MA60</span><span style="color:#fff;margin-left:6px;">$83,389</span></div>
+    <div style="background:#1c2128;padding:5px 12px;border-radius:6px;border:1px solid #30363d;"><span style="color:#8b949e;">MA200</span><span style="color:#fff;margin-left:6px;">$99,204</span></div>
+  </div>
+  <div style="margin-top:8px;color:#8b949e;font-size:13px;">⚠️ 均线纠缠</div>
+</div>
+
+<h2>🌊 艾略特波浪分析</h2>
+<div class="wave-section">
+  <h3>大周期 5浪结构</h3>
+  <table>
+    <tr><th>波浪</th><th>时间</th><th>价格范围</th><th>涨跌幅</th><th>说明</th></tr>
+    <tr><td><span class="signal signal-bull">浪①</span></td><td>2025初~2025-07-14</td><td>$XX,XXX→$123,260</td><td class="up">+108%</td><td>第一波主升（缺2025年初数据）</td></tr>
+    <tr><td><span class="signal signal-neutral">浪②</span></td><td>2025-07-14~2025-08-14</td><td>$123,260→$124,560</td><td class="up">+1%</td><td>横盘整理</td></tr>
+    <tr><td><span class="signal signal-bull">浪③🏆</span></td><td>2025-08~2025-10-06</td><td>$124,560→$126,304</td><td class="up">+1.4%</td><td>历史高点</td></tr>
+    <tr><td><span class="signal signal-bear">浪④</span></td><td>2025-10-06~2026-02-06</td><td>$126,304→$59,781</td><td class="down">-52.7%</td><td>深度回调，未破浪①顶</td></tr>
+    <tr><td><span class="signal signal-bull">浪⑤</span></td><td>2026-02-06~至今</td><td>$59,781→<b>$80,787</b></td><td class="up">+35.1%</td><td>当前进行中 · 已运行3个月</td></tr>
+  </table>
+</div>
+
+<div class="wave-section">
+  <h3>浪⑤内部子浪分析</h3>
+  <table>
+    <tr><th>子浪</th><th>价格范围</th><th>涨幅</th><th>状态</th></tr>
+    <tr><td><span class="signal signal-bull">⑤-①</span></td><td>$59,781→$71,313</td><td class="up">+19.3%</td><td>✅ 已完成</td></tr>
+    <tr><td><span class="signal signal-neutral">⑤-②</span></td><td>$71,313→$65,868</td><td class="down">-7.6%</td><td>✅ 已完成</td></tr>
+    <tr><td><span class="signal signal-bull">⑤-③</span></td><td>$65,868→<b>$80,787</b></td><td class="up">+22.7%</td><td>🔴 进行中</td></tr>
+    <tr><td><span class="signal signal-neutral">⑤-④</span></td><td>预估回踩</td><td class="down">待定</td><td>⏳ 待确认</td></tr>
+    <tr><td><span class="signal signal-bull">⑤-⑤</span></td><td>回踩→新高</td><td class="up">预估+15~25%</td><td>⏳ 最终目标</td></tr>
+  </table>
+</div>
+
+<div class="wave-section">
+  <h3>鳄鱼线 & 混沌理论</h3>
+  <table>
+    <tr><th>指标</th><th>值</th><th>信号</th></tr>
+    <tr><td>鳄鱼·唇线 (绿·SMA5)</td><td>$78,636.99</td><td rowspan="3"><b>🐊 多头张嘴向上 — 趋势强烈</b></td></tr>
+    <tr><td>鳄鱼·牙齿 (红·SMA8)</td><td>$75,062.82</td></tr>
+    <tr><td>鳄鱼·颚骨 (蓝·SMA13)</td><td>$72,398.03</td></tr>
+  </table>
+</div>
+
+<h2>🎯 关键价位 & 斐波那契目标</h2>
+<div class="grid">
+  <div class="card" style="border-color:#3fb950;"><div class="label" style="color:#3fb950;">🎯 T3</div><div class="value" style="color:#3fb950;">$101,000</div><div style="color:#8b949e;font-size:13px;">Fib 0.382 · 乐观目标</div></div>
+  <div class="card" style="border-color:#58a6ff;"><div class="label" style="color:#58a6ff;">🎯 T2</div><div class="value" style="color:#58a6ff;">$93,000</div><div style="color:#8b949e;font-size:13px;">Fib 0.500 · 2026-01阻力区</div></div>
+  <div class="card" style="border-color:#d29922;"><div class="label" style="color:#d29922;">🎯 T1</div><div class="value" style="color:#d29922;">$85,200</div><div style="color:#8b949e;font-size:13px;">Fib 0.618 · 第一目标</div></div>
+  <div class="card" style="border-color:#f0883e;"><div class="label" style="color:#f0883e;">📍 当前位置</div><div class="value" style="color:#f0883e;">$80,787</div><div style="color:#8b949e;font-size:13px;">浪⑤-③推进中</div></div>
+  <div class="card" style="border-color:#f85149;"><div class="label" style="color:#f85149;">🛡️ S1支撑</div><div class="value" style="color:#f85149;">$74,000</div><div style="color:#8b949e;font-size:13px;">MA20+Fib0.786</div></div>
+  <div class="card" style="border-color:#f85149;"><div class="label" style="color:#f85149;">⛔ 止损线</div><div class="value" style="color:#f85149;">$59,781</div><div style="color:#8b949e;font-size:13px;">浪⑤结构失效位</div></div>
+</div>
+
+<h2>🔍 短线视角 (H1 · 近7天)</h2>
+<div class="chart-box">
+  <canvas id="h1Chart" height="200"></canvas>
+</div>
+
+<div class="wave-section">
+  <h3>H1 最新数据</h3>
+  <div style="overflow-x:auto;">
+  <table>
+    <tr><th>时间</th><th>开</th><th>高</th><th>低</th><th>收</th><th>量</th></tr>
+    <tr><td>09:00</td><td>$80,654.86</td><td>$80,673.78</td><td>$80,543.30</td><td>📈 $80,671.67</td><td>1280</td></tr>
+<tr><td>10:00</td><td>$80,671.94</td><td>$80,776.62</td><td>$80,586.27</td><td>📈 $80,764.46</td><td>1432</td></tr>
+<tr><td>11:00</td><td>$80,765.19</td><td>$80,881.09</td><td>$80,686.33</td><td>📉 $80,754.43</td><td>1364</td></tr>
+<tr><td>12:00</td><td>$80,756.35</td><td>$80,829.65</td><td>$80,712.84</td><td>📉 $80,740.76</td><td>1194</td></tr>
+<tr><td>13:00</td><td>$80,735.68</td><td>$80,799.35</td><td>$80,656.80</td><td>📉 $80,684.16</td><td>1284</td></tr>
+<tr><td>14:00</td><td>$80,684.08</td><td>$80,743.85</td><td>$80,636.55</td><td>📈 $80,725.80</td><td>1134</td></tr>
+<tr><td>15:00</td><td>$80,726.34</td><td>$80,789.68</td><td>$80,702.46</td><td>📉 $80,720.52</td><td>1199</td></tr>
+<tr><td>16:00</td><td>$80,724.92</td><td>$80,892.56</td><td>$80,698.05</td><td>📈 $80,826.44</td><td>1400</td></tr>
+<tr><td>17:00</td><td>$80,823.90</td><td>$80,904.49</td><td>$80,735.20</td><td>📉 $80,796.58</td><td>1160</td></tr>
+<tr><td>18:00</td><td>$80,790.19</td><td>$80,875.84</td><td>$80,668.17</td><td>📈 $80,853.54</td><td>1289</td></tr>
+
+  </table>
+  </div>
+</div>
+
+<div style="background:#1c1a0a;border:1px solid #d29922;border-radius:8px;padding:15px;margin:20px 0;">
+  <b style="color:#d29922;">⚠️ 风险提示</b>
+  <p style="color:#8b949e;font-size:13px;margin-top:5px;">
+    本报告基于技术分析自动生成，仅供参考，不构成投资建议。
+    加密货币市场波动巨大。<br>
+    RSI(70.8)偏高，短期有回调需求,
+    浪⑤-③已运行+22.7%，当前追高风险较大。
+    建议等待⑤-④回调后在MA20~MA60附近伺机做多。
+  </p>
+</div>
+
+<div class="footer">BTCUSD 分析报告 · 生成于 2026-05-10 18:56 · GPT/人工智能分析仅供参考</div>
+
+</div>
+
+<script>
+const cd = {"dates": ["2025-12-25", "2025-12-26", "2025-12-27", "2025-12-28", "2025-12-29", "2025-12-30", "2025-12-31", "2026-01-01", "2026-01-02", "2026-01-03", "2026-01-04", "2026-01-05", "2026-01-06", "2026-01-07", "2026-01-08", "2026-01-09", "2026-01-10", "2026-01-11", "2026-01-12", "2026-01-13", "2026-01-14", "2026-01-15", "2026-01-16", "2026-01-17", "2026-01-18", "2026-01-19", "2026-01-20", "2026-01-21", "2026-01-22", "2026-01-23", "2026-01-24", "2026-01-25", "2026-01-26", "2026-01-27", "2026-01-28", "2026-01-29", "2026-01-30", "2026-01-31", "2026-02-01", "2026-02-02", "2026-02-03", "2026-02-04", "2026-02-05", "2026-02-06", "2026-02-07", "2026-02-14", "2026-02-21", "2026-02-28", "2026-03-07", "2026-03-14", "2026-03-21", "2026-03-28", "2026-04-03", "2026-04-04", "2026-04-11", "2026-04-18", "2026-04-25", "2026-05-02", "2026-05-09", "2026-05-10"], "close": [87166.93, 87286.73, 87823.21, 87876.01, 87107.53, 88408.99, 87507.73, 88733.79, 89954.51, 90582.25, 91488.33, 93870.62, 93713.3, 91279.42, 91025.51, 90513.19, 90388.59, 90874.3, 91193.84, 95376.06, 96955.27, 95587.59, 95504.7, 95118.69, 93639.75, 92570.84, 88322.45, 89358.62, 89470.07, 89484.25, 89092.8, 86569.02, 88242.0, 89126.74, 89160.41, 84508.59, 84106.76, 78630.76, 76899.0, 78664.72, 75658.95, 73000.81, 62790.83, 70521.16, 69240.9, 69789.48, 67951.79, 66969.44, 67262.71, 71215.89, 68905.48, 66318.23, 66947.16, 67288.25, 73082.21, 75727.87, 77640.41, 78681.15, 80348.16, 80787.37], "high": [88549.11, 89510.53, 87935.89, 88034.32, 90321.29, 89313.4, 89123.52, 88800.62, 90942.72, 90693.04, 91780.14, 94816.27, 94432.23, 93718.52, 91604.46, 91945.69, 90710.11, 91166.78, 92400.22, 96730.96, 97968.49, 97180.02, 95834.54, 95633.01, 95496.25, 93639.83, 92808.78, 90500.14, 90273.54, 91133.3, 89796.66, 89180.68, 88780.11, 89429.32, 90496.15, 89219.22, 84604.23, 84147.83, 79349.55, 79317.84, 79132.94, 76893.35, 73180.92, 71689.21, 71657.79, 70551.49, 68691.02, 67764.99, 68544.71, 71313.36, 71091.93, 67258.79, 67370.94, 67568.78, 73845.3, 77454.58, 77905.84, 79173.39, 80673.73, 80904.49], "low": [86891.51, 86582.54, 87156.74, 87352.49, 86681.38, 86709.73, 87077.42, 87379.42, 88254.03, 89263.59, 90581.29, 91464.97, 91198.12, 90576.08, 89174.25, 89584.4, 90260.66, 90091.61, 89998.18, 90929.13, 94420.59, 95092.85, 94231.51, 94978.48, 93565.6, 91858.97, 87696.18, 87167.72, 88410.38, 88442.52, 89019.27, 85962.61, 86401.16, 87187.04, 88706.9, 83223.37, 80935.37, 75480.52, 75612.66, 74524.98, 72845.86, 71695.75, 62111.7, 59781.19, 67272.91, 68683.1, 67496.72, 63006.86, 66891.27, 70305.12, 68542.86, 65868.06, 66264.48, 66764.76, 72538.37, 75459.03, 77168.05, 78014.49, 80107.53, 80543.3]};
+const ma5d = [87166.93, 87226.83, 87425.62, 87538.22, 87452.08, 87700.49, 87744.69, 87926.81, 88342.51, 89037.45, 89653.32, 90925.9, 91921.8, 92186.78, 92275.44, 92080.41, 91384.0, 90816.2, 90799.09, 91669.2, 92957.61, 93997.41, 94923.49, 95708.46, 95361.2, 94484.31, 93031.29, 91802.07, 90672.35, 89841.25, 89145.64, 88794.95, 88571.63, 88502.96, 88438.19, 87521.35, 87028.9, 85106.65, 82661.1, 80561.97, 78792.04, 76570.85, 73402.86, 72127.29, 70242.53, 69068.64, 68058.83, 68894.55, 68242.86, 68637.86, 68461.06, 68134.35, 68129.89, 68135.0, 68508.27, 69872.74, 72137.18, 74483.98, 77095.96, 78636.99];
+const ma20d = [87166.93, 87226.83, 87425.62, 87538.22, 87452.08, 87611.57, 87596.73, 87738.86, 87985.05, 88244.77, 88539.64, 88983.89, 89347.69, 89485.67, 89588.32, 89646.13, 89689.8, 89755.61, 89831.3, 90108.54, 90597.96, 91013.0, 91397.08, 91759.21, 92085.82, 92293.91, 92334.65, 92365.89, 92341.67, 92286.77, 92166.99, 91801.91, 91528.35, 91420.71, 91327.46, 91027.23, 90713.14, 90100.96, 89386.22, 88550.65, 87485.84, 86356.5, 84720.8, 83490.93, 82270.98, 81131.92, 80113.38, 78993.92, 77883.56, 76970.14, 75960.77, 74948.23, 73883.49, 72791.57, 71987.66, 71548.62, 71225.3, 71227.82, 71400.28, 71506.41];
+const rsid = [50.0, 50.0, 50.0, 50.0, 50.0, 50.0, 50.0, 50.0, 50.0, 50.0, 50.0, 50.0, 50.0, 50.0, 65.0, 62.1, 60.0, 61.3, 65.9, 72.1, 78.8, 70.7, 68.0, 64.9, 56.8, 45.5, 35.4, 44.4, 45.4, 46.9, 46.1, 38.5, 42.7, 31.5, 24.5, 20.2, 19.9, 15.6, 15.5, 22.1, 23.3, 17.7, 12.3, 28.0, 27.5, 30.0, 26.0, 23.8, 24.3, 34.1, 32.6, 34.9, 37.5, 35.2, 46.9, 53.3, 72.6, 65.6, 70.9, 70.8];
+const h1d = {"dates": ["00:00", "01:00", "02:00", "03:00", "04:00", "05:00", "06:00", "07:00", "08:00", "09:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00", "20:00", "21:00", "22:00", "23:00", "00:00", "01:00", "02:00", "03:00", "04:00", "05:00", "05:00", "05:00", "05:00", "05:00", "05:00", "06:00", "07:00", "08:00", "09:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00", "20:00", "21:00", "22:00", "23:00", "00:00", "01:00", "02:00", "03:00", "04:00", "05:00", "06:00", "07:00", "08:00", "09:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00"], "close": [78442.83, 78381.61, 78453.99, 78473.65, 78448.57, 78725.2, 78822.57, 78681.15, 78541.98, 78236.19, 78160.14, 78186.62, 78165.17, 78237.01, 78280.42, 78356.26, 78376.59, 78519.72, 78405.53, 78653.86, 78735.66, 78657.2, 78722.62, 78653.13, 78648.42, 78719.42, 78721.45, 78755.32, 78911.95, 78820.47, 80253.1, 81401.54, 81538.7, 79719.11, 80244.59, 80267.48, 80190.3, 80226.09, 80319.02, 80418.49, 80383.21, 80375.9, 80377.28, 80249.29, 80214.51, 80403.11, 80226.97, 80256.85, 80330.15, 80389.28, 80385.59, 80323.95, 80517.07, 80615.42, 80798.04, 80896.87, 80923.38, 80795.44, 80767.76, 80757.46, 80652.97, 80657.98, 80671.67, 80764.46, 80754.43, 80740.76, 80684.16, 80725.8, 80720.52, 80826.44, 80796.58, 80853.54], "high": [78604.89, 78478.35, 78488.64, 78515.61, 78485.63, 79173.39, 78866.83, 78819.64, 78754.0, 78541.69, 78311.48, 78210.98, 78232.36, 78249.57, 78342.28, 78444.22, 78495.55, 78611.05, 78530.92, 78846.03, 78878.83, 78767.51, 78780.53, 78807.74, 78778.06, 78810.94, 78748.1, 78854.2, 79286.73, 79049.62, 80377.25, 81783.29, 81620.3, 79921.96, 80255.81, 80408.7, 80291.95, 80234.06, 80441.91, 80482.08, 80561.54, 80673.73, 80481.63, 80429.69, 80297.49, 80436.67, 80404.87, 80339.18, 80372.13, 80415.68, 80414.87, 80431.22, 80595.4, 80794.0, 80922.7, 81073.77, 80952.86, 80932.78, 80887.77, 80817.91, 80839.08, 80751.25, 80673.78, 80776.62, 80881.09, 80829.65, 80799.35, 80743.85, 80789.68, 80892.56, 80904.49, 80875.84], "low": [78416.11, 78355.72, 78304.72, 78425.66, 78405.71, 78433.26, 78599.65, 78617.11, 78477.81, 78140.17, 78104.59, 78103.18, 78102.74, 78146.25, 78061.93, 78273.16, 78354.1, 78328.0, 78389.79, 78370.7, 78654.69, 78572.16, 78593.63, 78605.93, 78570.61, 78541.34, 78611.03, 78659.74, 78715.02, 78642.08, 79934.65, 81296.61, 81288.25, 79617.42, 80099.55, 80217.76, 80099.47, 80113.11, 80206.43, 80311.88, 80303.15, 80362.26, 80340.53, 80187.58, 80107.53, 80199.04, 80192.94, 80152.23, 80237.79, 80255.65, 80303.37, 80237.27, 80221.62, 80470.79, 80606.01, 80769.27, 80766.61, 80720.56, 80721.09, 80653.68, 80599.86, 80603.35, 80543.3, 80586.27, 80686.33, 80712.84, 80656.8, 80636.55, 80702.46, 80698.05, 80735.2, 80668.17]};
+
+// 主价格图
+new Chart(document.getElementById('priceChart'), {
+  type: 'line',
+  data: {
+    labels: cd.dates,
+    datasets: [
+      {label:'收盘',data:cd.close,borderColor:'#3fb950',backgroundColor:'rgba(63,185,80,0.08)',fill:true,tension:0.15,pointRadius:0,borderWidth:2,yAxisID:'y'},
+      {label:'MA5',data:ma5d,borderColor:'#f0883e',borderDash:[5,3],pointRadius:0,borderWidth:1,tension:0.15,yAxisID:'y'},
+      {label:'MA20',data:ma20d,borderColor:'#58a6ff',borderDash:[5,3],pointRadius:0,borderWidth:1,tension:0.15,yAxisID:'y'}
+    ]
+  },
+  options: {
+    responsive:true, maintainAspectRatio:false,
+    plugins:{legend:{labels:{color:'#8b949e'}}},
+    scales:{
+      x:{ticks:{color:'#484f58',maxTicksLimit:10},grid:{color:'#21262d'}},
+      y:{ticks:{color:'#484f58'},grid:{color:'#21262d'}}
+    }
+  }
+});
+
+// RSI
+new Chart(document.getElementById('rsiChart'), {
+  type: 'line',
+  data: {
+    labels: cd.dates,
+    datasets: [{label:'RSI(14)',data:rsid,borderColor:'#d29922',pointRadius:0,borderWidth:1.5,tension:0.15,yAxisID:'y'}]
+  },
+  options: {
+    responsive:true, maintainAspectRatio:false,
+    plugins:{legend:{labels:{color:'#8b949e'}}},
+    scales:{
+      x:{display:false},
+      y:{min:20,max:85,ticks:{color:'#484f58',stepSize:10},grid:{color:'#21262d'}}
+    }
+  }
+});
+
+// H1
+new Chart(document.getElementById('h1Chart'), {
+  type: 'line',
+  data: {
+    labels: h1d.dates,
+    datasets: [{label:'H1收盘',data:h1d.close,borderColor:'#58a6ff',backgroundColor:'rgba(88,166,255,0.08)',fill:true,tension:0.1,pointRadius:0,borderWidth:1.5,yAxisID:'y'}]
+  },
+  options: {
+    responsive:true, maintainAspectRatio:false,
+    plugins:{legend:{labels:{color:'#8b949e'}}},
+    scales:{
+      x:{ticks:{color:'#484f58',maxTicksLimit:12},grid:{color:'#21262d'}},
+      y:{ticks:{color:'#484f58'},grid:{color:'#21262d'}}
+    }
+  }
+});
+</script>
+
+</body>
+</html>
